@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>羽翼管理系统平台</title>
+    <script src="public/js/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="public/css/index.css">
+    <link rel="stylesheet" href="public/css/font-awesome.min.css">
+    <script>
+        $(document).ready(function(){
+            $(".nav_list_li").click(function(){
+                $(".menu-ul").toggleClass("menu-ul-block");
+               
+            });
+        });
+    </script>
+</head>
+<body>
+<!--导航条-->
+<div class="admin_header">
+ <!--logo-->
+    <div class="admin_login">
+        <h1>羽翼管理系统平台</h1>
+    </div>
+    <!--右边-->
+    <div class="admin_logout">
+
+    </div>
+</div>
+<!--左边菜单栏-->
+<div class="admin_container">
+<div class="admin_menu">
+    <ul class="nav nav_list">
+        <li>
+            <a href="#">
+            <i class="fa fa-cog fa-2x" aria-hidden="true"></i>
+            <span>个人设置</span>
+            <b class="fa fa-angle-down fa-2x"></b>
+            </a>
+        </li>
+        <li class="nav_list_li">
+            <a class="nav_list_a" href="#">
+                <i class="fa fa-file-text fa-2x"></i>
+                <span>用户管理</span>
+                <b class="fa fa-angle-down fa-2x"></b>
+            </a>
+
+            <ul class="menu-ul">
+                <li class="menu-item">
+                <a href="">用户列表</a>
+                </li>
+                <li class="menu-item">
+                <a href="">添加用户</a>
+                </li>
+                <li class="menu-item">
+                <a href="">用户等级</a>
+                </li>
+                <li class="menu-item">
+                <a href="">用户权限</a>
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-file-text fa-2x"></i>
+                <span>内容管理</span>
+                <b class="fa fa-angle-down fa-2x"></b>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-file-image-o fa-2x"></i>
+                <span>照片管理</span>
+                <b class="fa fa-angle-down fa-2x"></b>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-pencil fa-2x"></i>
+                <span>评论管理</span>
+                <b class="fa fa-angle-down fa-2x"></b>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-area-chart fa-2x"></i>
+                <span>系统统计</span>
+                <b class="fa fa-angle-down fa-2x"></b>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-gears fa-2x"></i>
+                <span>系统管理</span>
+                <b class="fa fa-angle-down fa-2x"></b>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--管理内容-->
+<div class="admin_main">
+
+</div>
+</div>
+</body>
+</html>

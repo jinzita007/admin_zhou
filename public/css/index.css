@@ -1,0 +1,110 @@
+*{margin: 0;padding: 0;}
+body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+.admin_container:before, .admin_container:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+/*.nav_list_a:after, .nav_list_a:before {
+    content: " ";
+    display: table;
+}*/
+.admin_header{
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+    width: 100%;
+    background: #27a9bc;
+}
+.admin_login {
+    margin: 0 20px;
+}
+.admin_login h1{
+    color: #fffff0;
+}
+.admin_container{
+    position: relative;
+    padding: 0;
+}
+.admin_menu {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: #fffff0;
+    border-right:1px solid #ccc;
+    width: 189px;
+}
+.admin_menu:before {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    display: block;
+    width: 189px;
+    background-color: #f1f6fc;
+    border-right: 1px solid #ccc;
+    content: "";
+}
+ul.nav_list>li{
+    position: relative;
+    display: block;
+    border: 0;
+    border-bottom: 1px solid #d4d4d4;
+}
+ul.nav_list>li>a{
+   
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px 0 10px;
+    text-decoration: none;
+    color: #757070;
+}
+ul.nav_list>li>a>i {
+    display: inline;
+    min-width: 30px;
+    text-align: center;
+    line-height: inherit;
+    margin-right: 5px;
+    margin-left: 15px;
+    float: left;
+}
+ul.nav_list>li>a>b{
+    position: absolute;
+    margin-left: 50px;
+    line-height: inherit;
+}
+.menu-ul {
+    display: none;
+}
+.menu-ul-block {
+    display: block;
+    list-style-type: none;
+}
+.menu-item {
+    width: 100%;
+    background: #fff;
+    line-height: 30px;
+    
+}
+.menu-item:hover {
+    background-color: #eee;
+}
+.menu-item a {
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+
+    text-decoration: none;
+    padding: 0 20px 0 60px;
+}
+.menu-item a:hover {
+    color: #FF9000;
+}

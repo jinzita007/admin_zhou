@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <link rel="stylesheet" href="public/css/admin_list.css">
+</head>
+<body>
+<!--用户列表-->
+<div class="user define-width">
+    <span><a href="">羽翼管理中心</a></span>
+    <span>- 用户列表</span>
+    <span><button type="button" class="btn btn-success" id="addnew">新增用户</button></span>
+</div>
+<div class="user-search define-width">
+    <form action="javascript:searchUser()" name="searchForm">
+        <i class=""></i>
+        &nbsp;用户等级 <select name="user_rank">
+        <option value="0">所有等级</option>
+        <option value="1">未关注用户</option>
+        <option value="2">普通用户</option>
+        <option value="4">管理员</option>
+    </select>
+        用户名称 &nbsp;<input type="text" name="keyword">
+        <input type="submit" value=" 搜索 ">
+    </form>
+</div>
+<table class="table table-border define-width">
+    <thead>
+    <tr>
+        <th><input onclick="listTable.selectAll(this, &quot;checkboxes&quot;)" type="checkbox"></th>
+        <th>用户ID</th>
+        <th>用户名</th>
+        <th>电子邮箱</th>
+        <th>最后登陆IP</th>
+        <th>最后登陆时间</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="table-tr-td">
+        <td><input type="checkbox" name="checkboxes[]" value="1" notice="0"></td>
+        <td>1</td>
+        <td>admin</td>
+        <td>woaitianwen@qq.com</td>
+        <td>192.168.1.100</td>
+        <td></td>
+        <td>
+            <div class="">
+            <div class="">
+                <button class="btn"><span class=""></span> 编辑</button>
+                <button class="btn"><span class=""></span> 复制</button>
+                <button class="btn"><span class=""></span> 删除</button>
+            </div>
+        </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="background-color: rgb(255, 255, 255);">
+            <input type="hidden" name="act" value="batch_remove">
+            <input type="submit" id="btnSubmit" value="删除会员" disabled="true" class="button"></td>
+        <td align="right" nowrap="true" colspan="8" style="background-color: rgb(255, 255, 255);">
+           
+            <div class="turn-page">
+                总计  <span id="totalRecords">1</span>
+                个记录分为 <span id="totalPages">1</span>
+                页当前第 <span id="pageCurrent">1</span>
+                页，每页 <input type="text" size="3" id="pageSize" value="15" onkeypress="return listTable.changePageSize(event)">
+        <span class="page-link">
+          <a href="javascript:listTable.gotoPageFirst()">第一页</a>
+          <a href="javascript:listTable.gotoPagePrev()">上一页</a>
+          <a href="javascript:listTable.gotoPageNext()">下一页</a>
+          <a href="javascript:listTable.gotoPageLast()">最末页</a>
+          <select id="gotoPage" onchange="listTable.gotoPage(this.value)">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="31">31</option> 
+              </select>
+        </span>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

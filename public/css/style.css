@@ -1,0 +1,136 @@
+/*全局*/
+*{margin: 0;padding: 0;}
+body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+.container:before, .container:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+/*login.html*/
+/*欢迎登陆*/
+.login_main{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #f1f6fc;
+    z-index: -1;
+}
+/*顶部*/
+.login_header{
+    top: 0;
+    height: 60px;
+    background-color: #27a9bc;
+    width: 100%;
+}
+.login_header span{
+    color: #FFFFFF;
+    line-height: 60px;
+    text-indent: 44px;
+    float: left;
+}
+/*欢迎登陆界面*/
+.login_body{
+
+}
+
+/*logo*/
+.login_logo {
+    width: 100%;
+    text-align: center;
+    margin-top: 75px;
+}
+.login_logo h1{
+    color: #696969;
+}
+/*登陆框*/
+.login_box {
+    background: #dcdcdc;
+    width: 617px;
+    height: 330px;
+    margin-top: 30px;
+    margin: 0 auto;
+}
+.form-signin {
+    max-width: 300px;
+    padding: 19px 29px 29px;
+    margin: 0 auto;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+}
+.form-signin input[type="text"], .form-signin input[type="password"] {
+    font-size: 16px;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 7px 9px;
+}
+.input-block-level {
+    display: block;
+    width: 100%;
+    min-height: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.btn {
+    color: #FFFFFF;
+    background: #00a0e9;
+    display: inline-block;
+    margin-bottom: 0;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-bottom-color: #b3b3b3;
+    -webkit-border-radius: 4px;
+}
+.btn-large {
+    padding: 4px 20px;
+    font-size: 17.5px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+.radio, .checkbox {
+    min-height: 20px;
+}
+.clear{
+    clear: both;
+}
+/*底部版权*/
+.login_footer{
+    position: absolute;
+    height: 50px;
+    line-height: 50px;
+    background: #eaeaea;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
+.login_footer span {
+    color: #0b3a58;
+}
+
+/*index.html*/
+/*导航条*/
+.header {
+
+}
