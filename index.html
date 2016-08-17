@@ -7,24 +7,43 @@
     <link rel="stylesheet" href="public/css/index.css">
     <link rel="stylesheet" href="public/css/font-awesome.min.css">
     <script>
-        $(document).ready(function(){
-            $(".nav_list_li").click(function(){
-                $(".menu-ul").toggleClass("menu-ul-block");
-               
-            });
-        });
+       //个人设置
         $(document).ready(function(){
             $(".nav_list_li-1").click(function(){
                 $(".menu-ul-1").toggleClass("menu-ul-block");
                
             });
         });
+        //用户管理
+        $(document).ready(function(){
+            $(".nav_list_li").click(function(){
+                $(".menu-ul").toggleClass("menu-ul-block");
+               
+            });
+        });
+       
+        //系统管理
         $(document).ready(function(){
             $(".nav_list_li-setting").click(function(){
                 $(".menu-ul-setting").toggleClass("menu-ul-block");
                
             });
         });
+        //内容管理
+        $(document).ready(function(){
+            $(".nav_list_li-content").click(function(){
+                $(".menu-ul-content").toggleClass("menu-ul-block");
+               
+            });
+         });  
+        //图片管理
+        $(document).ready(function(){
+            $(".nav_list_li-image").click(function(){
+                $(".menu-ul-image").toggleClass("menu-ul-block");
+               
+            });
+         });  
+        //系统统计
          $(document).ready(function(){
             $(".nav_list_li-chart").click(function(){
                 $(".menu-ul-chart").toggleClass("menu-ul-block");
@@ -66,6 +85,7 @@
                 
             </ul>
         </li>
+        <!--用户管理-->
         <li class="nav_list_li">
             <a class="nav_list_a" href="#">
                 <i class="fa fa-file-text fa-2x"></i>
@@ -89,20 +109,51 @@
             </ul>
 
         </li>
-        <li>
+        <!--内容管理-->
+        <li class="nav_list_li-content">
             <a href="#">
                 <i class="fa fa-file-text fa-2x"></i>
                 <span>内容管理</span>
                 <b class="fa fa-angle-down fa-2x"></b>
             </a>
+             <ul class="menu-ul-content">
+                <li class="menu-item">
+                <a href="">所有文章</a>
+                </li>
+                <li class="menu-item">
+                <a href="">写文章</a>
+                </li>
+                <li class="menu-item">
+                <a href="">分类目录</a>
+                </li>
+                <li class="menu-item">
+                <a href="">标签</a>
+                </li>
+            </ul>
         </li>
-        <li>
+        <!--图片管理-->
+        <li class="nav_list_li-image">
             <a href="#">
                 <i class="fa fa-file-image-o fa-2x"></i>
-                <span>照片管理</span>
+                <span>图片管理</span>
                 <b class="fa fa-angle-down fa-2x"></b>
             </a>
+            <ul class="menu-ul-image">
+                <li class="menu-item">
+                <a href="">上传图片</a>
+                </li>
+                <li class="menu-item">
+                <a href="">分类管理</a>
+                </li>
+                <li class="menu-item">
+                <a href="">图片管理</a>
+                </li>
+                <li class="menu-item">
+                <a href="">已上传图片</a>
+                </li>
+            </ul>
         </li>
+        <!--评论管理-->
         <li>
             <a href="#">
                 <i class="fa fa-pencil fa-2x"></i>
@@ -110,6 +161,7 @@
                 <b class="fa fa-angle-down fa-2x"></b>
             </a>
         </li>
+        <!--系统统计-->
         <li class="nav_list_li-chart">
             <a href="#">
                 <i class="fa fa-area-chart fa-2x"></i>
@@ -132,6 +184,7 @@
                 </li>    
             </ul>
         </li>
+        <!--系统管理-->
         <li class="nav_list_li-setting">
             <a href="#">
                 <i class="fa fa-gears fa-2x"></i>
