@@ -13,6 +13,25 @@
                
             });
         });
+        $(document).ready(function(){
+            $(".nav_list_li-1").click(function(){
+                $(".menu-ul-1").toggleClass("menu-ul-block");
+               
+            });
+        });
+        $(document).ready(function(){
+            $(".nav_list_li-setting").click(function(){
+                $(".menu-ul-setting").toggleClass("menu-ul-block");
+               
+            });
+        });
+         $(document).ready(function(){
+            $(".nav_list_li-chart").click(function(){
+                $(".menu-ul-chart").toggleClass("menu-ul-block");
+               
+            });
+        });
+        
     </script>
 </head>
 <body>
@@ -31,12 +50,21 @@
 <div class="admin_container">
 <div class="admin_menu">
     <ul class="nav nav_list">
-        <li>
+        <li class="nav_list_li-1">
             <a href="#">
             <i class="fa fa-cog fa-2x" aria-hidden="true"></i>
             <span>个人设置</span>
             <b class="fa fa-angle-down fa-2x"></b>
             </a>
+             <ul class="menu-ul-1">
+                <li class="menu-item">
+                <a href="">修改信息</a>
+                </li>
+                <li class="menu-item">
+                <a href="">修改密码</a>
+                </li>
+                
+            </ul>
         </li>
         <li class="nav_list_li">
             <a class="nav_list_a" href="#">
@@ -82,19 +110,45 @@
                 <b class="fa fa-angle-down fa-2x"></b>
             </a>
         </li>
-        <li>
+        <li class="nav_list_li-chart">
             <a href="#">
                 <i class="fa fa-area-chart fa-2x"></i>
                 <span>系统统计</span>
                 <b class="fa fa-angle-down fa-2x"></b>
+               
             </a>
+             <ul class="menu-ul-chart">
+                 <li class="menu-item">
+                 <a href="">折线图</a>
+                </li> 
+                <li class="menu-item">
+                <a href="">区域图</a>
+                </li>
+                <li class="menu-item">
+                <a href="">柱状图</a>
+                </li>
+                 <li class="menu-item">
+                <a href="">饼图</a>
+                </li>    
+            </ul>
         </li>
-        <li>
+        <li class="nav_list_li-setting">
             <a href="#">
                 <i class="fa fa-gears fa-2x"></i>
                 <span>系统管理</span>
                 <b class="fa fa-angle-down fa-2x"></b>
             </a>
+            <ul class="menu-ul-setting">
+                <li class="menu-item">
+                <a href="">站点管理</a>
+                </li>
+                <li class="menu-item">
+                <a href="">站点信息</a>
+                </li>
+                <li class="menu-item">
+                <a href="">基本设置</a>
+                </li>
+            </ul>
         </li>
     </ul>
 </div>

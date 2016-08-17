@@ -81,7 +81,7 @@ ul.nav_list>li>a>b{
     margin-left: 50px;
     line-height: inherit;
 }
-.menu-ul {
+.menu-ul,.menu-ul-1,.menu-ul-setting,.menu-ul-chart {
     display: none;
 }
 .menu-ul-block {

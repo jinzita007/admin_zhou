@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <link rel="stylesheet" href="public/css/user.css">
+</head>
+<body>
+<!--用户列表-->
+<div class="user define-width">
+    <span><a href="">羽翼管理中心</a></span>
+    <span>- 添加用户</span>
+   
+</div>
+<form action="" method="post">
+<h2 class="h1"><b>添加用户</b></h2>
+<div class="admin_table mb10">
+<table width="100%" cellspacing="0" cellpadding="0">
+    <tbody><tr class="tr1 vt">
+        <td class="td1">用户名</td>
+        <td class="td2"><input type="text" class="input input_wa" maxlength="15" name="username"></td>
+    </tr>
+    <tr class="tr1 vt">
+        <td class="td1">密&nbsp;&nbsp;码</td>
+        <td class="td2"><input type="password" class="input input_wa" name="password"></td>
+    </tr>
+    <tr class="tr1 vt">
+        <td class="td1">电子邮箱</td>
+        <td class="td2"><input type="text" class="input input_wa" name="email"></td>
+    </tr>
+    <tr class="tr1 vt">
+        <td class="td1">用户组</td>
+        <td class="td2"><select class="select_wa" name="groupid">
+        <option value="1">未关注用户</option>
+        <option value="2">普通用户</option>
+        <option value="4">管理员</option>
+        </select></td>
+    </tr>
+</tbody></table>
+</div>
+<div class="tac mb10">
+    <span class="btn"><span><button type="submit">提 交</button></span></span>
+</div>
+<input type="hidden" name="action" value="addnew">
+</form>
+</body>
+</html>
