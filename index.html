@@ -6,52 +6,27 @@
     <script src="public/js/jquery-2.1.4.min.js"></script>
     <link rel="stylesheet" href="public/css/index.css">
     <link rel="stylesheet" href="public/css/font-awesome.min.css">
-    <script>
-       //个人设置
-        $(document).ready(function(){
-            $(".nav_list_li-1").click(function(){
-                $(".menu-ul-1").toggleClass("menu-ul-block");
-               
-            });
-        });
-        //用户管理
-        $(document).ready(function(){
-            $(".nav_list_li").click(function(){
-                $(".menu-ul").toggleClass("menu-ul-block");
-               
-            });
-        });
-       
-        //系统管理
-        $(document).ready(function(){
-            $(".nav_list_li-setting").click(function(){
-                $(".menu-ul-setting").toggleClass("menu-ul-block");
-               
-            });
-        });
-        //内容管理
-        $(document).ready(function(){
-            $(".nav_list_li-content").click(function(){
-                $(".menu-ul-content").toggleClass("menu-ul-block");
-               
-            });
-         });  
-        //图片管理
-        $(document).ready(function(){
-            $(".nav_list_li-image").click(function(){
-                $(".menu-ul-image").toggleClass("menu-ul-block");
-               
-            });
-         });  
-        //系统统计
-         $(document).ready(function(){
-            $(".nav_list_li-chart").click(function(){
-                $(".menu-ul-chart").toggleClass("menu-ul-block");
-               
-            });
-        });
-        
-    </script>
+    <script type="text/javascript" src="public/js/index.js"></script>
+    <script src="public/js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+   $('.nav_list_div').click(function() {
+    if ($(this).siblings('ul').css('display') == 'none') {
+     $(this).siblings('ul').slideDown(100).children('li');
+     if ($(this).parents('li').siblings('li').children('ul').css('display') == 'block') {
+      $(this).parents('li').siblings('li').children('ul').slideUp(100);
+ 
+     }
+    } else {
+     //控制自身菜单下子菜单隐藏
+     $(this).siblings('ul').slideUp(100);
+     //控制自身菜单下子菜单隐藏
+     $(this).siblings('ul').children('li').children('ul').slideUp(100);
+    }
+   });
+ });
+</script>
+
 </head>
 <body>
 <!--导航条-->
@@ -69,76 +44,105 @@
 <div class="admin_container">
 <div class="admin_menu">
     <ul class="nav nav_list">
-        <li class="nav_list_li-1">
-            <a href="#">
+        <li class="title">
+        <a href="#" class="nav_list_a">
             <i class="fa fa-cog fa-2x" aria-hidden="true"></i>
             <span>个人设置</span>
             <b class="fa fa-angle-down fa-2x"></b>
             </a>
-             <ul class="menu-ul-1">
+
+             <ul class="menu-ul" style="display: none">
                 <li class="menu-item">
-                <a href="">修改信息</a>
+                  <a href="#">修改信息</a>
                 </li>
                 <li class="menu-item">
-                <a href="">修改密码</a>
+                  <a href="#">修改密码</a>
                 </li>
-                
+                <li class="menu-item">
+                  <a href="#">邮箱配置</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">清除缓存</a>
+                </li>
             </ul>
+
         </li>
         <!--用户管理-->
-        <li class="nav_list_li">
-            <a class="nav_list_a" href="#">
-                <i class="fa fa-file-text fa-2x"></i>
+        <li class="title">
+            <a href="#" class="nav_list_a">
+                <i class="fa fa-group fa-2x"></i>
                 <span>用户管理</span>
                 <b class="fa fa-angle-down fa-2x"></b>
             </a>
-
-            <ul class="menu-ul">
-                <li class="menu-item">
-                <a href="">用户列表</a>
-                </li>
-                <li class="menu-item">
-                <a href="">添加用户</a>
-                </li>
-                <li class="menu-item">
-                <a href="">用户等级</a>
-                </li>
-                <li class="menu-item">
-                <a href="">用户权限</a>
-                </li>
-            </ul>
+            <ul class="menu-ul" style="display: none">
+                    <li class="menu-item menu-item-two">
+                    <div class="nav_list_div">
+                        <a href="#" class="nav_list_a2">用户组</a>
+                         <b class="fa fa-angle-right fa"></b>
+                        </div>
+                          <ul class="menu-ul" style="display: none">
+                            <li class="menu-item">
+                            <a href="">用户列表</a>
+                            </li>
+                            <li class="menu-item">
+                            <a href="">添加用户</a>
+                            </li>
+                            <li class="menu-item">
+                            <a href="">用户等级</a>
+                            </li>
+                            <li class="menu-item">
+                            <a href="">用户权限</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item menu-item-two" >
+                    <div class="nav_list_div">
+                        <a href="#" class="nav_list_a2">管理组</a>
+                        <b class="fa fa-angle-right fa"></b>
+                        </div>
+                        <ul class="menu-ul" style="display: none">
+                            <li class="menu-item">
+                            <a href="#">角色管理</a>
+                            </li>
+                            <li class="menu-item">
+                            <a href="#">管理员</a>
+                            </li>
+                         </ul>
+                    </li>
+                </ul>
+          
 
         </li>
         <!--内容管理-->
-        <li class="nav_list_li-content">
-            <a href="#">
+        <li class="title">
+            <a href="#" class="nav_list_a">
                 <i class="fa fa-file-text fa-2x"></i>
                 <span>内容管理</span>
                 <b class="fa fa-angle-down fa-2x"></b>
             </a>
-             <ul class="menu-ul-content">
-                <li class="menu-item">
-                <a href="">所有文章</a>
-                </li>
+             <ul class="menu-ul" style="display: none">
                 <li class="menu-item">
                 <a href="">写文章</a>
+                </li>
+                <li class="menu-item">
+                <a href="">所有文章</a>
                 </li>
                 <li class="menu-item">
                 <a href="">分类目录</a>
                 </li>
                 <li class="menu-item">
-                <a href="">标签</a>
+                <a href="">回收站</a>
                 </li>
             </ul>
         </li>
         <!--图片管理-->
-        <li class="nav_list_li-image">
-            <a href="#">
+        <li class="title">
+            <a href="#" class="nav_list_a">
                 <i class="fa fa-file-image-o fa-2x"></i>
                 <span>图片管理</span>
                 <b class="fa fa-angle-down fa-2x"></b>
             </a>
-            <ul class="menu-ul-image">
+            <ul class="menu-ul" style="display: none">
                 <li class="menu-item">
                 <a href="">上传图片</a>
                 </li>
@@ -155,21 +159,21 @@
         </li>
         <!--评论管理-->
         <li>
-            <a href="#">
+            <a href="#" class="nav_list_a">
                 <i class="fa fa-pencil fa-2x"></i>
                 <span>评论管理</span>
                 <b class="fa fa-angle-down fa-2x"></b>
             </a>
         </li>
         <!--系统统计-->
-        <li class="nav_list_li-chart">
-            <a href="#">
+        <li class="title">
+            <a href="#" class="nav_list_a">
                 <i class="fa fa-area-chart fa-2x"></i>
                 <span>系统统计</span>
                 <b class="fa fa-angle-down fa-2x"></b>
                
             </a>
-             <ul class="menu-ul-chart">
+             <ul class="menu-ul" style="display: none">
                  <li class="menu-item">
                  <a href="">折线图</a>
                 </li> 
@@ -185,13 +189,13 @@
             </ul>
         </li>
         <!--系统管理-->
-        <li class="nav_list_li-setting">
-            <a href="#">
+        <li class="title">
+            <a href="#" class="nav_list_a">
                 <i class="fa fa-gears fa-2x"></i>
                 <span>系统管理</span>
                 <b class="fa fa-angle-down fa-2x"></b>
             </a>
-            <ul class="menu-ul-setting">
+            <ul class="menu-ul " style="display: none">
                 <li class="menu-item">
                 <a href="">站点管理</a>
                 </li>
@@ -200,6 +204,54 @@
                 </li>
                 <li class="menu-item">
                 <a href="">基本设置</a>
+                </li>
+            </ul>
+        </li>
+        <!--扩展工具-->
+        <li class="title">
+            <a href="#" class="nav_list_a">
+                <i class="fa fa-cloud fa-2x"></i>
+                <span>扩展工具</span>
+                <b class="fa fa-angle-down fa-2x"></b>
+            </a>
+            <ul class="menu-ul" style="display: none">
+                <li class="menu-item menu-item-two">
+                <div class="nav_list_div"> 
+                <a href="#" class="nav_list_a2">备份管理</a>
+                <b class="fa fa-angle-right fa"></b>
+                </div> 
+                <ul class="menu-ul" style="display: none">
+                    <li class="menu-item">
+                        <a href="#">数据还原</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">数据备份</a>
+                    </li>
+                </ul>
+                </li>
+                <li class="menu-item">
+                <a href="#">广告管理</a>
+                </li>
+                <li class="menu-item menu-item-two">
+                <div class="nav_list_div"> 
+                <a href="#" class="nav_list_a2">幻灯片</a>
+                <b class="fa fa-angle-right fa"></b>
+                </div> 
+                <ul class="menu-ul" style="display: none">
+                    <li class="menu-item">
+                        <a href="#">幻灯片管理</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">幻灯片分类</a>
+                    </li>
+                </ul>
+
+                </li>
+                <li class="menu-item">
+                <a href="">插件管理</a>
+                </li>
+                <li class="menu-item">
+                <a href="">友情链接</a>
                 </li>
             </ul>
         </li>
