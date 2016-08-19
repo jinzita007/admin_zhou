@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="public/css/font-awesome.min.css">
     <script type="text/javascript" src="public/js/index.js"></script>
     <script src="public/js/jquery-ui.min.js"></script>
-<script type="text/javascript">
+    <script type="text/javascript" src="public/js/bootstrap.min.js"></script>
+<!--<script type="text/javascript">
 $(document).ready(function() {
    $('.nav_list_div').click(function() {
     if ($(this).siblings('ul').css('display') == 'none') {
@@ -25,6 +26,25 @@ $(document).ready(function() {
     }
    });
  });
+</script>-->
+<script type="text/javascript">
+  $(document).ready(function() {
+   $('.nav_list_div,.nav_list_a').click(function() {
+    if ($(this).siblings('ul').css('display') == 'none') {
+     $(this).siblings('ul').slideDown(100).children('li');
+     if ($(this).parents('li').siblings('li').children('ul').css('display') == 'block') {
+      $(this).parents('li').siblings('li').children('ul').slideUp(100);
+ 
+     }
+    } else {
+     //控制自身菜单下子菜单隐藏
+     $(this).siblings('ul').slideUp(100);
+     //控制自身菜单下子菜单隐藏
+     $(this).siblings('ul').children('li').children('ul').slideUp(100);
+    }
+   });
+ });
+
 </script>
 
 </head>
@@ -44,6 +64,15 @@ $(document).ready(function() {
 <div class="admin_container">
 <div class="admin_menu">
     <ul class="nav nav_list">
+     <!--管理首页-->
+        <li>
+            <a href="index.html" class="nav_list_a">
+                <i class="fa fa-home fa-2x" aria-hidden="true"></i>
+                <span>管理首页</span>
+                
+            </a>
+        </li>
+        <!--个人设置-->
         <li class="title">
         <a href="#" class="nav_list_a">
             <i class="fa fa-cog fa-2x" aria-hidden="true"></i>
@@ -77,12 +106,12 @@ $(document).ready(function() {
             <ul class="menu-ul" style="display: none">
                     <li class="menu-item menu-item-two">
                     <div class="nav_list_div">
-                        <a href="#" class="nav_list_a2">用户组</a>
+                        <a href="#">用户组</a>
                          <b class="fa fa-angle-right fa"></b>
                         </div>
                           <ul class="menu-ul" style="display: none">
                             <li class="menu-item">
-                            <a href="">用户列表</a>
+                            <a href="admin_list.html">用户列表</a>
                             </li>
                             <li class="menu-item">
                             <a href="">添加用户</a>
@@ -97,7 +126,7 @@ $(document).ready(function() {
                     </li>
                     <li class="menu-item menu-item-two" >
                     <div class="nav_list_div">
-                        <a href="#" class="nav_list_a2">管理组</a>
+                        <a href="#">管理组</a>
                         <b class="fa fa-angle-right fa"></b>
                         </div>
                         <ul class="menu-ul" style="display: none">
@@ -162,7 +191,7 @@ $(document).ready(function() {
             <a href="#" class="nav_list_a">
                 <i class="fa fa-pencil fa-2x"></i>
                 <span>评论管理</span>
-                <b class="fa fa-angle-down fa-2x"></b>
+                
             </a>
         </li>
         <!--系统统计-->
@@ -217,7 +246,7 @@ $(document).ready(function() {
             <ul class="menu-ul" style="display: none">
                 <li class="menu-item menu-item-two">
                 <div class="nav_list_div"> 
-                <a href="#" class="nav_list_a2">备份管理</a>
+                <a href="#">备份管理</a>
                 <b class="fa fa-angle-right fa"></b>
                 </div> 
                 <ul class="menu-ul" style="display: none">
@@ -234,7 +263,7 @@ $(document).ready(function() {
                 </li>
                 <li class="menu-item menu-item-two">
                 <div class="nav_list_div"> 
-                <a href="#" class="nav_list_a2">幻灯片</a>
+                <a href="#">幻灯片</a>
                 <b class="fa fa-angle-right fa"></b>
                 </div> 
                 <ul class="menu-ul" style="display: none">
@@ -257,6 +286,29 @@ $(document).ready(function() {
         </li>
     </ul>
 </div>
+
+<div class="bread">
+                        <script type="text/javascript">
+                            try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+                        </script>
+
+                        <ul class="bread-ul">
+                            <li>
+                                <i class="fa fa-home"></i>
+                                <a href="#">首页</a>
+                            </li>
+                            <li class="active">管理首页</li>
+                        </ul><!-- .breadcrumb -->
+
+                        <div class="nav-search" id="nav-search">
+                            <form class="form-search">
+                                <span class="input-icon">
+                                    <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off">
+                                    <i class="icon-search nav-search-icon"></i>
+                                </span>
+                            </form>
+                        </div><!-- #nav-search -->
+                    </div>
 <!--管理内容-->
 <div class="admin_main">
 
