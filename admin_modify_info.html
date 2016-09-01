@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <title>羽翼管理系统平台</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="public/css/font-awesome.min.css">
     <link rel="stylesheet" href="static/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="public/css/index.css">
+    <link rel="stylesheet" href="public/css/info.css">
     <script type="text/javascript" src="public/js/index.js"></script>
     <script src="public/js/jquery-2.1.4.min.js"></script>
-    <script src="public/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="public/js/bootstrap.min.js"></script>
-    <script>
+<script>
 $(document).ready(function(){
   $('.nav_list_a').click(function() {
   //var tmp = null,
@@ -28,8 +28,8 @@ $(document).ready(function(){
  //   return false;  // 阻止事件冒泡
 });
 </script>
-    <script type="text/javascript">
-  $(document).ready(function() {
+<script type="text/javascript">
+   $(document).ready(function() {
    $('.nav_list_div,.nav_list_a').click(function() {
     if ($(this).siblings('ul').css('display') == 'none') {
      $(this).siblings('ul').slideDown(100).children('li');
@@ -62,7 +62,6 @@ $(document).ready(function(){
           羽翼管理系统平台</span>
           </a>
     </div>
-
 <!--navbar-collapse开始-->
 <div class="navbar-collapse collapse" style="height: 1px;">
        <ul id="main-menu" class="nav navbar-nav navbar-right">
@@ -92,9 +91,6 @@ $(document).ready(function(){
 
 
 
-
-
-
 <!--左边菜单栏-->
 <div class="admin_container">
 <div class="admin_menu">
@@ -105,7 +101,8 @@ $(document).ready(function(){
              <span class="pull-left-container">
                 <i class="fa fa-home fa-2x" aria-hidden="true"></i>
               </span>
-                <span class="span-fa">管理首页</span>       
+                <span class="span-fa">管理首页</span>
+                
             </a>
         </li>
         <!--个人设置-->
@@ -117,11 +114,11 @@ $(document).ready(function(){
             <span class="span-fa">个人设置</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
-            </span>
+            </span><!--<b class="fa fa-angle-down fa-2x"></b>-->
         </a>
 
-             <ul class="menu-ul" style="display: none">
-                <li class="menu-item">
+             <ul class="menu-ul" style="display: block">
+                <li class="menu-item" style="background-color:#FFDFDF;">
                   <a href="admin_modify_info.html">修改信息</a>
                 </li>
                 <li class="menu-item">
@@ -139,10 +136,10 @@ $(document).ready(function(){
         <!--用户管理-->
         <li class="title">
             <a href="#" class="nav_list_a">
-                <span class="pull-left-container">
+            <span class="pull-left-container">
                 <i class="fa fa-group fa-2x"></i>
-                </span>
-                 <span class="span-fa">用户管理</span>
+            </span>
+                <span class="span-fa">用户管理</span>
                  <span class="pull-right-container">
                  <i class="fa fa-angle-right pull-right"></i>
                 </span>
@@ -189,9 +186,9 @@ $(document).ready(function(){
         <!--内容管理-->
         <li class="title">
             <a href="#" class="nav_list_a">
-                <span class="pull-left-container">
+            <span class="pull-left-container">
                 <i class="fa fa-file-text fa-2x"></i>
-                </span>
+            </span>
                 <span class="span-fa">内容管理</span>
                 <span class="pull-right-container">
                  <i class="fa fa-angle-right pull-right"></i>
@@ -214,7 +211,7 @@ $(document).ready(function(){
         </li>
         <!--图片管理-->
         <li class="title">
-           <a href="#" class="nav_list_a">
+            <a href="#" class="nav_list_a">
             <span class="pull-left-container">
                 <i class="fa fa-file-image-o fa-2x"></i>
             </span>
@@ -300,7 +297,7 @@ $(document).ready(function(){
         </li>
         <!--扩展工具-->
         <li class="title">
-           <a href="#" class="nav_list_a">
+            <a href="#" class="nav_list_a">
             <span class="pull-left-container">
                 <i class="fa fa-cloud fa-2x"></i>
             </span>
@@ -352,13 +349,8 @@ $(document).ready(function(){
         </li>
     </ul>
 </div>
-<div class="clear"></div>
-
-
-
 
 </div>
-
 <!--content-wrapper开始-->
 <div class="content-wrapper" style="min-height: 1036px;">
 <!--修改信息表单开始-->
@@ -371,18 +363,82 @@ $(document).ready(function(){
                         <ul class="bread-ul">
                             <li>
                                 <i class="fa fa-home"></i>
-                                <a href="#">首页</a>
+                                <a href="index.html">首页</a>
                             </li>
-                            <li class="active">管理首页</li>
-                        </ul>
-                    </div>
+                            <li>
+                           个人设置
+                            </li>
+                            <li class="active">修改信息</li>
+                        </ul><!-- .breadcrumb -->
+
+                        <!--<div class="nav-search" id="nav-search">
+                            <form class="form-search">
+                                <span class="input-icon">
+                                    <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off">
+                                    <i class="icon-search nav-search-icon"></i>
+                                </span>
+                            </form>
+                        </div>--><!-- #nav-search -->
+</div>
+<!--info结束-->
 </div>
 
+<!--info-form开始-->
 <div class="info-form">
-
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="inputUser3" class="col-sm-2 control-label">昵称</label>
+    <div class="col-sm-10">
+      <input type="user" class="form-control" placeholder="admin">
+    </div>
+  </div>
+  <div class="form-group">
+      <label for="inputSex" class="col-sm-2 control-label">性别</label>
+      <div class="col-sm-10">
+          <select class="form-control">
+            <option value="0" selected="">保密</option>                               
+            <option value="1">男</option>           
+            <option value="2">女</option>                      
+          </select>
+      </div>
+  </div>
+  <div class="form-group">
+    <label for="inputBirthday" class="col-sm-2 control-label">生日</label>
+    <div class="col-sm-10">
+      <input type="birthday" class="form-control" placeholder="生日">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputSite" class="col-sm-2 control-label">个人网站</label>
+    <div class="col-sm-10">
+      <input type="site" class="form-control" placeholder="个人网站">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputSignature" class="col-sm-2 control-label">个性签名</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" rows="3"></textarea>
+    </div>
+  </div>
+  <!--<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+    </div>
+  </div>-->
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">保存</button>
+    </div>
+  </div>
+</form>
 </div>
 
 <!--修改信息表单结束-->
+</div>
 
 </div>
 <!--content-wrapper结束-->

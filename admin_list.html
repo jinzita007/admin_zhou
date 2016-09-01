@@ -2,14 +2,397 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>用户管理</title>
+    <title>用户管理</title> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="public/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/index.css">
     <link rel="stylesheet" href="public/css/admin_list.css">
+    <script type="text/javascript" src="public/js/index.js"></script>
+    <script src="public/js/jquery-2.1.4.min.js"></script>
+    <script src="public/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="public/js/bootstrap.min.js"></script>
+    <script>
+$(document).ready(function(){
+  $('.nav_list_a').click(function() {
+  //var tmp = null,
+    //$title = $('.nav li'),
+   // $con = $('.nav li > ul');
+ 
+ // $title.click(function(){
+    $('.ad-nav li').children('ul').slideUp().end().children('.arrow').removeClass('arrow-up');
+    $('.ad-nav li > ul').children('ul').slideToggle().end().children('.arrow').addClass('arrow-up');
+    //tmp = this;
+  });
+ // $con.click(function(){
+ //   return false;  // 阻止事件冒泡
+});
+</script>
+    <script type="text/javascript">
+  $(document).ready(function() {
+   $('.nav_list_div,.nav_list_a').click(function() {
+    if ($(this).siblings('ul').css('display') == 'none') {
+     $(this).siblings('ul').slideDown(100).children('li');
+     if ($(this).parents('li').siblings('li').children('ul').css('display') == 'block') {
+      $(this).parents('li').siblings('li').children('ul').slideUp(100);
+ 
+     }
+    } else {
+     //控制自身菜单下子菜单隐藏
+     $(this).siblings('ul').slideUp(100);
+     //控制自身菜单下子菜单隐藏
+     $(this).siblings('ul').children('li').children('ul').slideUp(100);
+    }
+   });
+ });
+
+</script>
+
 </head>
 <body>
+<!--wrapper开始-->
+<div class="wrapper">
+<!--导航条开始-->
+<div class="ad-navbar ad-navbar-default" role="navigation">
+    <div class="navbar-header">
+          
+          <a class="" href="index.html">
+          <span class="navbar-brand" style="color:#fff;">
+          <span class="fa fa-paper-plane"></span> 
+          羽翼管理系统平台</span>
+          </a>
+    </div>
+
+<!--navbar-collapse开始-->
+<div class="navbar-collapse collapse" style="height: 1px;">
+       <ul id="main-menu" class="nav navbar-nav navbar-right">
+            <li class="dropdown hidden-xs">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:#fff;">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                    <span class="padding-right-small" style="position:relative;top: 3px;"></span> 玉龙
+                    <i class="fa fa-caret-down"></i>
+                </a>
+
+              <ul class="dropdown-menu">
+                <li><a href="./">我的账户</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">管理面板</li>
+                <li><a href="admin_edit_user.html">修改密码</a></li>
+                <li><a href="./">修改昵称</a></li>
+                <li class="divider"></li>
+                <li><a tabindex="-1" href="login.html">注销</a></li>
+              </ul>
+            </li>
+    </ul>
+</div>
+<!--navbar-collapse开始-->
+</div>
+<!--导航条结束-->
+
+
+
+
+
+
+
+<!--左边菜单栏-->
+<div class="admin_container">
+<div class="admin_menu">
+    <ul class="ad-nav nav_list">
+     <!--管理首页-->
+        <li>
+            <a href="index.html" class="nav_list_a">
+             <span class="pull-left-container">
+                <i class="fa fa-home fa-2x" aria-hidden="true"></i>
+              </span>
+                <span class="span-fa">管理首页</span>       
+            </a>
+        </li>
+        <!--个人设置-->
+        <li class="title">
+        <a href="#" class="nav_list_a">
+        <span class="pull-left-container">
+            <i class="fa fa-cog fa-2x" aria-hidden="true"></i>
+        </span>
+            <span class="span-fa">个人设置</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+        </a>
+
+             <ul class="menu-ul" style="display: none">
+                <li class="menu-item">
+                  <a href="admin_modify_info.html">修改信息</a>
+                </li>
+                <li class="menu-item">
+                  <a href="admin_edit_user.html">修改密码</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">邮箱配置</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#">清除缓存</a>
+                </li>
+            </ul>
+
+        </li>
+        <!--用户管理-->
+        <li class="title">
+            <a href="#" class="nav_list_a">
+                <span class="pull-left-container">
+                <i class="fa fa-group fa-2x"></i>
+                </span>
+                 <span class="span-fa">用户管理</span>
+                 <span class="pull-right-container">
+                 <i class="fa fa-angle-right pull-right"></i>
+                </span>
+            </a>
+            <ul class="menu-ul" style="display: block">
+                    <li class="menu-item menu-item-two">
+                    <div class="nav_list_div">
+                        <a href="#">用户组</a>
+                         <b class="fa fa-angle-right fa"></b>
+                        </div>
+                          <ul class="menu-ul" style="display: block">
+                            <li class="menu-item" style="background-color:#FFDFDF;">
+                            <a href="admin_list.html">用户列表</a>
+                            </li>
+                            <li class="menu-item">
+                            <a href="add_user.html">添加用户</a>
+                            </li>
+                            <li class="menu-item">
+                            <a href="">用户等级</a>
+                            </li>
+                            <li class="menu-item">
+                            <a href="">用户权限</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item menu-item-two" >
+                    <div class="nav_list_div">
+                        <a href="#">管理组</a>
+                        <b class="fa fa-angle-right fa"></b>
+                        </div>
+                        <ul class="menu-ul" style="display: none">
+                            <li class="menu-item">
+                            <a href="#">角色管理</a>
+                            </li>
+                            <li class="menu-item">
+                            <a href="#">管理员</a>
+                            </li>
+                         </ul>
+                    </li>
+                </ul>
+          
+
+        </li>
+        <!--内容管理-->
+        <li class="title">
+            <a href="#" class="nav_list_a">
+                <span class="pull-left-container">
+                <i class="fa fa-file-text fa-2x"></i>
+                </span>
+                <span class="span-fa">内容管理</span>
+                <span class="pull-right-container">
+                 <i class="fa fa-angle-right pull-right"></i>
+               </span>
+            </a>
+             <ul class="menu-ul" style="display: none">
+                <li class="menu-item">
+                <a href="">写文章</a>
+                </li>
+                <li class="menu-item">
+                <a href="">所有文章</a>
+                </li>
+                <li class="menu-item">
+                <a href="">分类目录</a>
+                </li>
+                <li class="menu-item">
+                <a href="">回收站</a>
+                </li>
+            </ul>
+        </li>
+        <!--图片管理-->
+        <li class="title">
+           <a href="#" class="nav_list_a">
+            <span class="pull-left-container">
+                <i class="fa fa-file-image-o fa-2x"></i>
+            </span>
+                <span class="span-fa">图片管理</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-right pull-right"></i>
+               </span>
+            </a>
+            <ul class="menu-ul" style="display: none">
+                <li class="menu-item">
+                <a href="">上传图片</a>
+                </li>
+                <li class="menu-item">
+                <a href="">分类管理</a>
+                </li>
+                <li class="menu-item">
+                <a href="">图片管理</a>
+                </li>
+                <li class="menu-item">
+                <a href="">已上传图片</a>
+                </li>
+            </ul>
+        </li>
+        <!--评论管理-->
+        <li>
+            <a href="#" class="nav_list_a">
+            <span class="pull-left-container">
+                <i class="fa fa-pencil fa-2x"></i>
+            </span>
+                <span class="span-fa">评论管理</span>
+                
+            </a>
+        </li>
+        <!--系统统计-->
+        <li class="title">
+            <a href="#" class="nav_list_a">
+            <span class="pull-left-container">
+                <i class="fa fa-area-chart fa-2x"></i>
+            </span>
+                <span class="span-fa">系统统计</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-right pull-right"></i>
+               </span>
+               
+            </a>
+             <ul class="menu-ul" style="display: none">
+                 <li class="menu-item">
+                 <a href="">折线图</a>
+                </li> 
+                <li class="menu-item">
+                <a href="">区域图</a>
+                </li>
+                <li class="menu-item">
+                <a href="">柱状图</a>
+                </li>
+                 <li class="menu-item">
+                <a href="">饼图</a>
+                </li>    
+            </ul>
+        </li>
+        <!--系统管理-->
+        <li class="title">
+            <a href="#" class="nav_list_a">
+            <span class="pull-left-container">
+                <i class="fa fa-gears fa-2x"></i>
+            </span>
+                <span class="span-fa">系统管理</span>
+               <span class="pull-right-container">
+                 <i class="fa fa-angle-right pull-right"></i>
+               </span>
+            </a>
+            <ul class="menu-ul " style="display: none">
+                <li class="menu-item">
+                <a href="">站点管理</a>
+                </li>
+                <li class="menu-item">
+                <a href="">站点信息</a>
+                </li>
+                <li class="menu-item">
+                <a href="">基本设置</a>
+                </li>
+            </ul>
+        </li>
+        <!--扩展工具-->
+        <li class="title">
+           <a href="#" class="nav_list_a">
+            <span class="pull-left-container">
+                <i class="fa fa-cloud fa-2x"></i>
+            </span>
+                <span class="span-fa">扩展工具</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-right pull-right"></i>
+               </span>
+            </a>
+            <ul class="menu-ul" style="display: none">
+                <li class="menu-item menu-item-two">
+                <div class="nav_list_div"> 
+                <a href="#">备份管理</a>
+                <b class="fa fa-angle-right fa"></b>
+                </div> 
+                <ul class="menu-ul" style="display: none">
+                    <li class="menu-item">
+                        <a href="#">数据还原</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">数据备份</a>
+                    </li>
+                </ul>
+                </li>
+                <li class="menu-item">
+                <a href="#">广告管理</a>
+                </li>
+                <li class="menu-item menu-item-two">
+                <div class="nav_list_div"> 
+                <a href="#">幻灯片</a>
+                <b class="fa fa-angle-right fa"></b>
+                </div> 
+                <ul class="menu-ul" style="display: none">
+                    <li class="menu-item">
+                        <a href="#">幻灯片管理</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#">幻灯片分类</a>
+                    </li>
+                </ul>
+
+                </li>
+                <li class="menu-item">
+                <a href="">插件管理</a>
+                </li>
+                <li class="menu-item">
+                <a href="">友情链接</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="clear"></div>
+
+
+
+
+</div>
+
+<!--content-wrapper开始-->
+<div class="content-wrapper" style="min-height: 1036px;">
+<!--修改信息表单开始-->
+<div class="info">
+<div class="bread">
+                        <script type="text/javascript">
+                            try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+                        </script>
+
+                        <ul class="bread-ul">
+                            <li>
+                                <i class="fa fa-home"></i>
+                                <a href="#">首页</a>
+                            </li>
+                            <li class="active">用户管理</li>
+                            <li class="active">用户组</li>
+                            <li class="active">用户列表</li>
+                        </ul>
+                    </div>
+</div>
+
+<div class="info-form">
+
+</div>
+
+<!--修改信息表单结束-->
+
+<div class="content">
+
 <!--用户列表-->
+<div class="box">
+<div class="box-header">
 <div class="user define-width">
-    <span><a href="">羽翼管理中心</a></span>
-    <span>- 用户列表</span>
     <span><button type="button" class="btn btn-success" id="addnew">新增用户</button></span>
 </div>
 <div class="user-search define-width">
@@ -25,6 +408,12 @@
         <input type="submit" value=" 搜索 ">
     </form>
 </div>
+</div>
+
+<div class="box-body">
+
+<div class="row">
+<div class="col-sm-12">
 <table class="table table-border define-width">
     <thead>
     <tr>
@@ -38,6 +427,7 @@
     </tr>
     </thead>
     <tbody>
+
     <tr class="table-tr-td">
         <td><input type="checkbox" name="checkboxes[]" value="1" notice="0"></td>
         <td>1</td>
@@ -55,13 +445,100 @@
         </div>
         </td>
     </tr>
-    <tr>
-        <td colspan="2" style="background-color: rgb(255, 255, 255);">
+
+     <tr class="table-tr-td">
+        <td><input type="checkbox" name="checkboxes[]" value="1" notice="0"></td>
+        <td>1</td>
+        <td>admin</td>
+        <td>woaitianwen@qq.com</td>
+        <td>192.168.1.100</td>
+        <td></td>
+        <td>
+            <div class="">
+            <div class="">
+                <button class="btn"><span class=""></span> 编辑</button>
+                <button class="btn"><span class=""></span> 复制</button>
+                <button class="btn"><span class=""></span> 删除</button>
+            </div>
+        </div>
+        </td>
+    </tr>
+
+    <tr class="table-tr-td">
+        <td><input type="checkbox" name="checkboxes[]" value="1" notice="0"></td>
+        <td>1</td>
+        <td>admin</td>
+        <td>woaitianwen@qq.com</td>
+        <td>192.168.1.100</td>
+        <td></td>
+        <td>
+            <div class="">
+            <div class="">
+                <button class="btn"><span class=""></span> 编辑</button>
+                <button class="btn"><span class=""></span> 复制</button>
+                <button class="btn"><span class=""></span> 删除</button>
+            </div>
+        </div>
+        </td>
+    </tr>
+
+    <tr class="table-tr-td">
+        <td><input type="checkbox" name="checkboxes[]" value="1" notice="0"></td>
+        <td>1</td>
+        <td>admin</td>
+        <td>woaitianwen@qq.com</td>
+        <td>192.168.1.100</td>
+        <td></td>
+        <td>
+            <div class="">
+            <div class="">
+                <button class="btn"><span class=""></span> 编辑</button>
+                <button class="btn"><span class=""></span> 复制</button>
+                <button class="btn"><span class=""></span> 删除</button>
+            </div>
+        </div>
+        </td>
+    </tr>
+
+    <tr class="table-tr-td">
+        <td><input type="checkbox" name="checkboxes[]" value="1" notice="0"></td>
+        <td>1</td>
+        <td>admin</td>
+        <td>woaitianwen@qq.com</td>
+        <td>192.168.1.100</td>
+        <td></td>
+        <td>
+            <div class="">
+            <div class="">
+                <button class="btn"><span class=""></span> 编辑</button>
+                <button class="btn"><span class=""></span> 复制</button>
+                <button class="btn"><span class=""></span> 删除</button>
+            </div>
+        </div>
+        </td>
+    </tr>
+
+
+
+    </tbody>
+</table>
+
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-sm-12">
+
+<div class="dataTables_info" id="example2_info" role="status" aria-live="polite">
             <input type="hidden" name="act" value="batch_remove">
-            <input type="submit" id="btnSubmit" value="删除会员" disabled="true" class="button"></td>
-        <td align="right" nowrap="true" colspan="8" style="background-color: rgb(255, 255, 255);">
+            <input type="submit" id="btnSubmit" value="删除会员" disabled="true" class="button">
+</div>
+
            
-            <div class="turn-page">
+           
+           <div class="dataTables_paginate">
+        <div class="turn-page">
                 总计  <span id="totalRecords">1</span>
                 个记录分为 <span id="totalPages">1</span>
                 页当前第 <span id="pageCurrent">1</span>
@@ -79,10 +556,22 @@
               <option value="31">31</option> 
               </select>
         </span>
-            </div>
-        </td>
-    </tr>
-    </tbody>
-</table>
+        </div>
+        </div>
+        </div>
+
+
+</div>
+</div>
+
+</div>
+<!--content-wrapper结束-->
+</div>
+<!--wrapper结束-->
+     
+      
+
+
 </body>
 </html>
+
