@@ -1,0 +1,37 @@
+[
+    {   
+        "rank_id": 0,
+        "rank_name": "注册用户",
+        "min_points": "0",
+        "max_points": "1000",
+        "special_rank": "1"
+    },
+     {   
+        "rank_id": 1,
+        "rank_name": "VIP",
+        "min_points": "0",
+        "max_points": "100",
+        "special_rank": "1"
+    },
+     {   
+        "rank_id": 2,
+        "rank_name": "初级会员",
+        "min_points": "0",
+        "max_points": "100",
+        "special_rank": "1"
+    },
+     {   
+        "rank_id": 3,
+        "rank_name": "中级会员",
+        "min_points": "0",
+        "max_points": "100",
+        "special_rank": "1"
+    },
+      {   
+        "rank_id": 4,
+        "rank_name": "高级会员",
+        "min_points": "0",
+        "max_points": "100",
+        "special_rank": "1"
+    }
+]

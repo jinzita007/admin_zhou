@@ -1,52 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>羽翼管理系统平台</title>
+    <title>用户管理</title> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="public/css/font-awesome.min.css">
     <link rel="stylesheet" href="static/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="public/css/index.css">
-    <link rel="stylesheet" href="public/css/info.css">
-    <script type="text/javascript" src="public/js/index.js"></script>
-    <script src="public/js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="public/js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function(){
-  $('.nav_list_a').click(function() {
-  //var tmp = null,
-    //$title = $('.nav li'),
-   // $con = $('.nav li > ul');
- 
- // $title.click(function(){
-    $('.ad-nav li').children('ul').slideUp().end().children('.arrow').removeClass('arrow-up');
-    $('.ad-nav li > ul').children('ul').slideToggle().end().children('.arrow').addClass('arrow-up');
-    //tmp = this;
-  });
- // $con.click(function(){
- //   return false;  // 阻止事件冒泡
-});
-</script>
-<script type="text/javascript">
-   $(document).ready(function() {
-   $('.nav_list_div,.nav_list_a').click(function() {
-    if ($(this).siblings('ul').css('display') == 'none') {
-     $(this).siblings('ul').slideDown(100).children('li');
-     if ($(this).parents('li').siblings('li').children('ul').css('display') == 'block') {
-      $(this).parents('li').siblings('li').children('ul').slideUp(100);
- 
-     }
-    } else {
-     //控制自身菜单下子菜单隐藏
-     $(this).siblings('ul').slideUp(100);
-     //控制自身菜单下子菜单隐藏
-     $(this).siblings('ul').children('li').children('ul').slideUp(100);
-    }
-   });
- });
+    <link rel="stylesheet" href="public/css/table.css">
+    <!--<link rel="stylesheet" href="public/css/admin_list.css">-->
 
-</script>
+    <!--<link rel="stylesheet" href="table/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="table/css/bootstrap-table.min.css">
+
+
+
 
 </head>
 <body>
@@ -62,6 +31,7 @@ $(document).ready(function(){
           羽翼管理系统平台</span>
           </a>
     </div>
+
 <!--navbar-collapse开始-->
 <div class="navbar-collapse collapse" style="height: 1px;">
        <ul id="main-menu" class="nav navbar-nav navbar-right">
@@ -91,6 +61,9 @@ $(document).ready(function(){
 
 
 
+
+
+
 <!--左边菜单栏-->
 <div class="admin_container">
 <div class="admin_menu">
@@ -101,8 +74,7 @@ $(document).ready(function(){
              <span class="pull-left-container">
                 <i class="fa fa-home fa-2x" aria-hidden="true"></i>
               </span>
-                <span class="span-fa">管理首页</span>
-                
+                <span class="span-fa">管理首页</span>       
             </a>
         </li>
         <!--个人设置-->
@@ -114,14 +86,14 @@ $(document).ready(function(){
             <span class="span-fa">个人设置</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
-            </span><!--<b class="fa fa-angle-down fa-2x"></b>-->
+            </span>
         </a>
 
-             <ul class="menu-ul" style="display: block">
+             <ul class="menu-ul" style="display: none">
                 <li class="menu-item">
                   <a href="admin_modify_info.html">修改信息</a>
                 </li>
-                <li class="menu-item" style="background-color:#FFDFDF;">
+                <li class="menu-item">
                   <a href="admin_edit_user.html">修改密码</a>
                 </li>
                 <li class="menu-item">
@@ -136,29 +108,29 @@ $(document).ready(function(){
         <!--用户管理-->
         <li class="title">
             <a href="#" class="nav_list_a">
-            <span class="pull-left-container">
+                <span class="pull-left-container">
                 <i class="fa fa-group fa-2x"></i>
-            </span>
-                <span class="span-fa">用户管理</span>
+                </span>
+                 <span class="span-fa">用户管理</span>
                  <span class="pull-right-container">
                  <i class="fa fa-angle-right pull-right"></i>
                 </span>
             </a>
-            <ul class="menu-ul" style="display: none">
+            <ul class="menu-ul" style="display: block">
                     <li class="menu-item menu-item-two">
                     <div class="nav_list_div">
                         <a href="#">用户组</a>
                          <b class="fa fa-angle-right fa"></b>
                         </div>
-                          <ul class="menu-ul" style="display: none">
+                          <ul class="menu-ul" style="display: block">
                             <li class="menu-item">
                             <a href="admin_list.html">用户列表</a>
                             </li>
                             <li class="menu-item">
                             <a href="add_user.html">添加用户</a>
                             </li>
-                            <li class="menu-item">
-                            <a href="user_rank.html">用户等级</a>
+                            <li class="menu-item" style="background-color:#FFDFDF;">
+                            <a href="user_grade.html">用户等级</a>
                             </li>
                             <li class="menu-item">
                             <a href="">用户权限</a>
@@ -186,9 +158,9 @@ $(document).ready(function(){
         <!--内容管理-->
         <li class="title">
             <a href="#" class="nav_list_a">
-            <span class="pull-left-container">
+                <span class="pull-left-container">
                 <i class="fa fa-file-text fa-2x"></i>
-            </span>
+                </span>
                 <span class="span-fa">内容管理</span>
                 <span class="pull-right-container">
                  <i class="fa fa-angle-right pull-right"></i>
@@ -211,7 +183,7 @@ $(document).ready(function(){
         </li>
         <!--图片管理-->
         <li class="title">
-            <a href="#" class="nav_list_a">
+           <a href="#" class="nav_list_a">
             <span class="pull-left-container">
                 <i class="fa fa-file-image-o fa-2x"></i>
             </span>
@@ -297,7 +269,7 @@ $(document).ready(function(){
         </li>
         <!--扩展工具-->
         <li class="title">
-            <a href="#" class="nav_list_a">
+           <a href="#" class="nav_list_a">
             <span class="pull-left-container">
                 <i class="fa fa-cloud fa-2x"></i>
             </span>
@@ -349,12 +321,15 @@ $(document).ready(function(){
         </li>
     </ul>
 </div>
+<div class="clear"></div>
+
+
+
 
 </div>
-<!--content-wrapper开始-->
-<div class="content-wrapper" style="min-height: 1036px;">
-<!--修改信息表单开始-->
 
+<div class="content-wrapper" style="min-height: 1036px;">
+<!--info开始-->
 <div class="info">
 <div class="bread">
                         <script type="text/javascript">
@@ -364,80 +339,88 @@ $(document).ready(function(){
                         <ul class="bread-ul">
                             <li>
                                 <i class="fa fa-home"></i>
-                                <a href="index.html">首页</a>
+                                <a href="#">首页</a>
                             </li>
-                            <li>
-                   
-                             个人设置
-                            </li>
-                            <li class="active">修改密码</li>
-                        </ul><!-- .breadcrumb -->
+                            <li class="active">用户管理</li>
+                            <li class="active">用户组</li>
+                            <li class="active">用户等级</li>
+                        </ul>
+                    </div>
+</div>
+<!--info结束-->
 
-                        <!--<div class="nav-search" id="nav-search">
-                            <form class="form-search">
-                                <span class="input-icon">
-                                    <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off">
-                                    <i class="icon-search nav-search-icon"></i>
-                                </span>
-                            </form>
-                        </div>--><!-- #nav-search -->
+<!--用户等级开始-->
+
+    <div class="col-sm-12">
+    <div class="table-con">
+<!--用户等级开始-->
+      <table id="table" data-toggle="table" data-url="data/data1.json" data-show-columns="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-pagination="true" data-height="500">
+        <thead>
+        <tr>
+            <th data-field="id" data-formatter="idFormatter">ID</th>
+            <th data-field="name">Item Name</th>
+            <th data-field="price">Item Price</th>
+        </tr>
+        </thead>
+    </table>
+<!--用户等级结束-->
 </div>
 </div>
-
-<!--info-form开始-->
-<!--<div class="info-form">-->
-<div class="content">
-<form class="form-horizontal">
-
-<div class="form-group">
-    <label for="username" class="col-sm-2 control-label">账户</label>
-    <div class="col-sm-10">
-      <input type="user" class="form-control" placeholder="Username">
-    </div>
-</div>
-
-<div class="form-group">
-    <label for="oldpass" class="col-sm-2 control-label">旧密码</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" placeholder="Old Password">
-    </div>
-</div>
-
-<div class="form-group">
-    <label for="newpass" class="col-sm-2 control-label">新密码</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" placeholder="New Password">
-    </div>
-</div>
-
-<div class="form-group">
-    <label for="newpassAgain" class="col-sm-2 control-label">确认新密码</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" placeholder="Again New Password">
-    </div>
-</div>
-
-<div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">确认修改</button>
-    </div>
-</div>
-
-</form>
-</div>
-
-
-<!--修改信息表单结束-->
-</div>
+<!--用户等级结束-->
 
 </div>
 <!--content-wrapper结束-->
 </div>
 <!--wrapper结束-->
+ 
 
-     
-      
+<script src="table/js/jquery.min.js"></script>
+<script src="table/js/bootstrap.min.js"></script>
+<script src="table/js/bootstrap-table.js"></script>
+
+
+<script type="text/javascript" src="public/js/index.js"></script>
+   <!-- <script src="public/js/jquery-2.1.4.min.js"></script>-->
+   <!--<script type="text/javascript" src="public/js/bootstrap.min.js"></script>-->
+
+          
+<script>
+$(document).ready(function(){
+  $('.nav_list_a').click(function() {
+  //var tmp = null,
+    //$title = $('.nav li'),
+   // $con = $('.nav li > ul');
+ 
+ // $title.click(function(){
+    $('.ad-nav li').children('ul').slideUp().end().children('.arrow').removeClass('arrow-up');
+    $('.ad-nav li > ul').children('ul').slideToggle().end().children('.arrow').addClass('arrow-up');
+    //tmp = this;
+  });
+ // $con.click(function(){
+ //   return false;  // 阻止事件冒泡
+});
+</script>
+    <script type="text/javascript">
+  $(document).ready(function() {
+   $('.nav_list_div,.nav_list_a').click(function() {
+    if ($(this).siblings('ul').css('display') == 'none') {
+     $(this).siblings('ul').slideDown(100).children('li');
+     if ($(this).parents('li').siblings('li').children('ul').css('display') == 'block') {
+      $(this).parents('li').siblings('li').children('ul').slideUp(100);
+ 
+     }
+    } else {
+     //控制自身菜单下子菜单隐藏
+     $(this).siblings('ul').slideUp(100);
+     //控制自身菜单下子菜单隐藏
+     $(this).siblings('ul').children('li').children('ul').slideUp(100);
+    }
+   });
+ });
+
+</script>
 
 
 </body>
 </html>
+

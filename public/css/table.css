@@ -1,0 +1,16 @@
+/*用户等级*/
+.table-con {
+	margin: auto;
+    margin-top: 15px;
+    background: #fff;
+    position: relative;
+    border-radius: 3px;
+    border-top: 3px solid #d2d6de;
+}
+.bootstrap-table{
+	margin: auto;
+	width: 90%;
+}
+.ml10 {
+    margin-left: 10px;
+}

@@ -237,7 +237,7 @@ ul.nav_list li{
     line-height: 40px;
     padding: 0 12px 0 0;
     display: block;
-    margin-bottom: 40px;
+    /*margin-bottom: 40px;*/
     width: 100%;
 
 }
@@ -340,3 +340,5 @@ span.input-icon {
     width: 600px;
     float: left;
 }
+
+
