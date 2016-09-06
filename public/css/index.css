@@ -341,4 +341,14 @@ span.input-icon {
     float: left;
 }
 
+/*bar.html*/
 
+.content-bar
+{
+    margin: auto;
+    background: #fff;
+    border-top: 3px solid #d2d6de;
+    margin-left: 15px;
+    margin-top: 20px;
+    margin-right: 15px;
+}
