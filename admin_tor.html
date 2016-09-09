@@ -8,11 +8,39 @@
     <link rel="stylesheet" href="public/css/font-awesome.min.css">
     <link rel="stylesheet" href="static/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="public/css/index.css">
+    <link rel="stylesheet" href="public/css/table.css">
+    <!--<link rel="stylesheet" href="public/css/admin_list.css">-->
 
-   <script type="text/javascript" src="public/js/index.js"></script>
-    <script src="public/js/jquery-2.1.4.min.js"></script>
-    <script src="public/js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="public/js/bootstrap.min.js"></script>
+    <!--<link rel="stylesheet" href="table/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="table/css/bootstrap-table.min.css">-->
+<style type="text/css">
+.cont{
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 3px;
+    border-top: 3px solid #d2d6de;
+}
+    .content {
+    /*min-height: 250px;*/
+    padding: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: #fff;
+}
+/*.box {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}*/
+</style>
     <script>
 $(document).ready(function(){
   $('.nav_list_a').click(function() {
@@ -48,6 +76,7 @@ $(document).ready(function(){
  });
 
 </script>
+
 </head>
 <body>
 <!--wrapper开始-->
@@ -147,7 +176,7 @@ $(document).ready(function(){
                  <i class="fa fa-angle-right pull-right"></i>
                 </span>
             </a>
-            <ul class="menu-ul" style="display: none">
+            <ul class="menu-ul" style="display: block">
                     <li class="menu-item menu-item-two">
                     <div class="nav_list_div">
                         <a href="#">用户组</a>
@@ -173,11 +202,11 @@ $(document).ready(function(){
                         <a href="#">管理组</a>
                         <b class="fa fa-angle-right fa"></b>
                         </div>
-                        <ul class="menu-ul" style="display: none">
+                        <ul class="menu-ul" style="display: block">
                             <li class="menu-item">
                             <a href="admin_roles.html">角色管理</a>
                             </li>
-                            <li class="menu-item">
+                            <li class="menu-item" style="background-color:#FFDFDF;">
                             <a href="admin_tor.html">管理员</a>
                             </li>
                          </ul>
@@ -263,8 +292,8 @@ $(document).ready(function(){
                </span>
                
             </a>
-             <ul class="menu-ul" style="display: block">
-                 <li class="menu-item" style="background-color:#FFDFDF;">
+             <ul class="menu-ul" style="display: none">
+                 <li class="menu-item">
                  <a href="line.html">折线图</a>
                 </li> 
                 <li class="menu-item">
@@ -376,87 +405,165 @@ $(document).ready(function(){
                                 <i class="fa fa-home"></i>
                                 <a href="#">首页</a>
                             </li>
-                            <li class="active">系统统计</li>
-                            <li class="active">折线图</li>
+                            <li class="active">用户管理</li>
+                            <li class="active">管理组</li>
+                            <li class="active">管理员</li>
                         </ul>
                     </div>
 </div>
-
-
-
 <!--修改信息表单结束-->
 
 
+<!--用户等级开始-->
+<div class="cont">
 <div class="content">
+<div class="box">
+<!--<div class="col-sm-12">
+    <div class="table-con">-->
+        <!--用户等级开始-->
+       <!-- <div class="pd-20">-->
+            <!--<div class="cl pd-5 bg-1 bk-gray"> 
+                <span class="l"> <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont"></i> 批量删除</a> <a class="btn btn-primary radius" href="javascript:;" onclick="admin_role_add('添加角色','admin-role-add.html','800')"><i class="Hui-iconfont"></i> 添加角色</a> 
+                </span>
+                 <span class="r">共有数据：<strong>54</strong> 条
+                 </span> 
+             </div>-->
+            <!--<table class="">
+                <thead>
+                    <tr>
+                        <th scope="col" colspan="6">角色管理</th>
+                    </tr>
+                    <tr class="text-c">-->
+                        <!--<th width="25"><input type="checkbox" value="" name=""></th>-->
+                        <!--<th width="40">ID</th>
+                        <th width="200">角色名称</th>
+                        <th>角色描述</th>
+                        <th width="300">状态</th>
+                        <th width="70">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-c">-->
+                        <!--<td><input type="checkbox" value="" name=""></td>-->
+                       <!-- <td>1</td>
+                        <td>超级管理员</td>
+                        <td>
+                            <a href="#">admin</a>
+                        </td>
+                        <td>拥有至高无上的权利</td>
+                        <td class="f-14">
+                            <a title="编辑" href="javascript:;" onclick="admin_role_edit('角色编辑','admin-role-add.html','1')" style="text-decoration:none"><i class="Hui-iconfont"></i></a>
+                            <a title="删除" href="javascript:;" onclick="admin_role_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont"></i></a>
+                        </td>
+                    </tr>
+                    <tr class="text-c">-->
+                        <!--<td><input type="checkbox" value="" name=""></td>-->
+                       <!-- <td>2</td>
+                        <td>总编</td>
+                        <td>
+                            <a href="#">张三</a>
+                        </td>
+                        <td>具有添加、审核、发布、删除内容的权限</td>
+                        <td class="f-14">
+                            <a title="编辑" href="javascript:;" onclick="admin_role_edit('角色编辑','admin-role-add.html','2')" style="text-decoration:none"><i class="Hui-iconfont"></i></a>
+                            <a title="删除" href="javascript:;" onclick="admin_role_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont"></i></a>
+                        </td>
+                    </tr>
+                   
+                  
+                </tbody>
+            </table>
+        </div>-->
+        <!--用户等级结束-->
+   <!-- </div>-->
 
-<!--bar 开始-->
-<div class="content-bar">
-<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+   <div class="box-table">
+   <table class="table table-hover table-bordered">
+   <thead>
+      <tr>
+         <th width="30">ID</th>
+         <th>用户名</th>
+         <th>最后登录IP</th>
+         <th>最后登录时间</th>
+         <th>邮箱</th>
+         <th>状态</th>   
+         <th>操作</th>     
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>1</td>
+         <td>admin</td>
+         <td>192.168.1.135</td>
+         <td>3016-09-09-11:46:54</td>
+         <td>woaitianwen@qq.com</td>
+         <th>正常</th>
+         <th>
+            <a href="3">编辑</a>
+            <a href="#">删除</a>
+         </th>
+      </tr>
+      
+   </tbody>
+</table>
+</div><!--end box-table-->
+
 </div>
-</div>
-<!--bar 结束-->
+</div><!--end content-->
+</div><!--end box-->
+<!--用户等级结束-->
+</div><!--end cont-->
 
 </div>
 <!--content-wrapper结束-->
 </div>
 <!--wrapper结束-->
+     
 
+<script src="table/js/jquery.min.js"></script>
+<script src="table/js/bootstrap.min.js"></script>
+<script src="table/js/bootstrap-table.js"></script>
 
+<script src="public/js/rank.js"></script>
+<script type="text/javascript" src="public/js/index.js"></script>
 
-<script src="static/highcharts/highcharts.js"></script>
-<script src="static/highcharts/modules/exporting.js"></script>
-<script type="text/javascript">
-$(function () {
-    $('#container').highcharts({
-        title: {
-            text: 'Monthly Average Temperature',
-            x: -20 //center
-        },
-        subtitle: {
-            text: 'Source: WorldClimate.com',
-            x: -20
-        },
-        xAxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-        },
-        yAxis: {
-            title: {
-                text: 'Temperature (°C)'
-            },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
-        },
-        tooltip: {
-            valueSuffix: '°C'
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
-        },
-        series: [{
-            name: 'Tokyo',
-            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-        }, {
-            name: 'New York',
-            data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
-        }, {
-            name: 'Berlin',
-            data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
-        }, {
-            name: 'London',
-            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
-        }]
-    });
+       
+<script>
+$(document).ready(function(){
+  $('.nav_list_a').click(function() {
+  //var tmp = null,
+    //$title = $('.nav li'),
+   // $con = $('.nav li > ul');
+ 
+ // $title.click(function(){
+    $('.ad-nav li').children('ul').slideUp().end().children('.arrow').removeClass('arrow-up');
+    $('.ad-nav li > ul').children('ul').slideToggle().end().children('.arrow').addClass('arrow-up');
+    //tmp = this;
+  });
+ // $con.click(function(){
+ //   return false;  // 阻止事件冒泡
 });
-        </script>
+</script>
+    <script type="text/javascript">
+  $(document).ready(function() {
+   $('.nav_list_div,.nav_list_a').click(function() {
+    if ($(this).siblings('ul').css('display') == 'none') {
+     $(this).siblings('ul').slideDown(100).children('li');
+     if ($(this).parents('li').siblings('li').children('ul').css('display') == 'block') {
+      $(this).parents('li').siblings('li').children('ul').slideUp(100);
+ 
+     }
+    } else {
+     //控制自身菜单下子菜单隐藏
+     $(this).siblings('ul').slideUp(100);
+     //控制自身菜单下子菜单隐藏
+     $(this).siblings('ul').children('li').children('ul').slideUp(100);
+    }
+   });
+ });
 
-
+</script>
+    
 
 
 </body>
